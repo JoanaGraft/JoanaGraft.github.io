@@ -1,0 +1,420 @@
+/* Import Google Fonts */
+/* Young Serif (headings) & Poppins (text) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Young+Serif&family=Source+Code+Pro&family=Source+Code+Pro:wght@500&display=swap");
+
+/*--------------------------------*/
+/*---OUTER CSS & THEME SWITCHER---*/
+/*--------------------------------*/
+
+/* The * selects and applies the styles to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* makes sure that padding and border are included in the width and height of elements */
+}
+
+body {
+  /* Set specific colours for variables that will change depending on which theme is active */
+  background: var(--colour-secondary);
+  background-image: linear-gradient(
+    to bottom,
+    var(--colour-primary),
+    var(--colour-secondary),
+    var(--colour-tertiary)
+  );
+  background-attachment: fixed; /* prevents background from scrolling */
+}
+
+/* Flexbox set-up so that card is always central on screen */
+#main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* stacks card on top of each other */
+  align-items: center; /* centers card horizontally */
+  justify-content: flex-start; /* pushes card to top of screen */
+}
+
+#theme-switch {
+  margin: 15px;
+}
+
+.btn {
+  margin: 5px;
+  padding: 20px 20px; /* makes a square */
+  border-radius: 20px; /* changes the square to a circle */
+  border: none;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#button-1 {
+  background: #20bdff;
+}
+
+#button-2 {
+  background: #c471ed;
+}
+
+#button-3 {
+  background: #799f0c;
+}
+
+#button-4 {
+  background: #e94057;
+}
+
+/* Set specific colours for variables that will change depending on which theme is active */
+
+/* Lunada (uigradients.com) */
+.theme-1 {
+  --colour-primary: #5433ff;
+  --colour-secondary: #20bdff;
+  --colour-tertiary: #a5fecb;
+  --colour-background: #ffffff;
+  --font-light: #ffffff;
+  --font-dark: #333333;
+}
+
+/* JShine */
+.theme-2 {
+  --colour-primary: #f64f59;
+  --colour-secondary: #c471ed;
+  --colour-tertiary: #12c2e9;
+  --colour-background: #ffffff;
+  --font-light: #ffffff;
+  --font-dark: #333333;
+}
+
+/* Combi (uigradients.com) */
+.theme-3 {
+  --colour-primary: #00416a;
+  --colour-secondary: #799f0c;
+  --colour-tertiary: #ffe000;
+  --colour-background: #ffffff;
+  --font-light: #ffffff;
+  --font-dark: #333333;
+}
+
+/* Wiretap */
+.theme-4 {
+  --colour-primary: #f27121;
+  --colour-secondary: #e94057;
+  --colour-tertiary: #8a2387;
+  --colour-background: #ffffff;
+  --font-light: #ffffff;
+  --font-dark: #333333;
+}
+
+#card {
+  width: 90vw; /* width is 90% of the viewport width */
+  max-width: 1024px; /* card cannot be wider than 1024px, it can only get narrower */
+  /* BEK - remove below fixes the issue with feedback div extending beyond bottom of card */
+  /* min-height: calc(
+    100vh - 10px
+  /* ); card will always take up at least 90% of viewport height minus set number of px for margin at bottom of window. */
+  margin: 0 20px;
+  padding: 20px;
+  background-color: var(--colour-background);
+  border: 5px solid var(--colour-secondary);
+  border-radius: 30px; /* rounds the borders of the card */
+  /* Code below creheiates a box shadow */
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/*----------------------------------*/
+/*--END OUTER CSS & THEME SWITCHER--*/
+/*----------------------------------*/
+
+/*----------------------------------*/
+/*-----------NESTING DIVS-----------*/
+/*----------------------------------*/
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* BEK - changed from 20px */
+}
+
+/*-----------HOME SCREEN-----------*/
+
+#heading {
+  font-family: "Young Serif";
+  color: var(--colour-secondary);
+  text-shadow: 1px 1px 1px indigo; /* creates a shadow effect! */
+  text-align: center;
+  padding: 10px;
+}
+
+#home-txt,
+.q-text {
+  font-family: "Poppins";
+  color: var(--font-dark);
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+/* Added new home screen elements */
+
+#home-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gif {
+  max-width: 100%;
+  max-height: auto;
+  padding: 20px;
+}
+
+/* End new home screen elements */
+
+/*---------END HOME SCREEN---------*/
+
+/*-----BEK CODE FOR BUG/HEARTS-----*/
+
+#score {
+  display: none;
+  /*display: flex;*/
+  justify-content: space-between;
+  min-width: 500px; /* will need updating for screens below 600px */
+  max-width: 900px; /* keeps hearts and bugs within card borders */
+  margin-bottom: 10px;
+  flex-direction: row; /* aligns hearts and bugs horizontally */
+}
+#score img {
+  height: 20px;
+}
+#bugs {
+  /* display: inline-block; */
+  margin-right: 5px;
+}
+#hearts {
+  /* display: inline-block; */
+  margin-left: auto;
+}
+
+/*----------END BUG/HEARTS---------*/
+
+/*---QUESTION CONTAINER + NESTED---*/
+
+#question-container {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#debug-me,
+#feedback {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  min-height: 150px;
+  font-size: 1.25rem;
+}
+
+#debug-me {
+  display: flex;
+  justify-content: left;
+  padding: 45px;
+  word-wrap: break-word;
+  /*word-break: break-all;*/
+  background-color: #1d1e22;
+  color: #ddca7e;
+  margin-bottom: 20px;
+  font-family: "Source Code Pro";
+  font-weight: 500;
+}
+
+.code-font,
+.mc-radio,
+#fback-code {
+  font-family: "Source Code Pro";
+  color: var(--font-dark);
+  font-size: 1.25rem;
+}
+
+#fback-code {
+  padding: 0 60px 20px 60px;
+}
+
+#code-window-q {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* BEK - changed from 20px */
+}
+
+#multiple-choice-q {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* BEK - changed from 20px */
+}
+
+#fill-blanks-q {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* BEK - changed from 20px */
+}
+
+#fb-input {
+  font-family: "Source Code Pro";
+  font-size: 1.2rem;
+  border: 2px solid var(--colour-primary); /* BEK - changed border size and colour to match theme */
+  border-radius: 5px;
+  width: 60px; /* BEK - not currently flexible. See how it works with other questions and change size if needed */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#fb-open-code,
+#fb-close-code {
+  line-height: 1.5;
+  font-family: "Source Code Pro";
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+#code-line-fb,
+#code-line-mc {
+  padding: 20px;
+}
+
+#code-mc {
+  padding-bottom: 40px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--font-dark);
+}
+
+/*
+ol {
+  padding-left: 1.1em;
+}
+*/
+
+#rule-list {
+  padding: 15px 20px 15px 35px;
+}
+
+#rule-list li {
+  padding: 5px;
+}
+
+.li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+#feedback {
+  display: none;
+  /*display: flex;*/
+  padding: 20px; /* BEK - removed from joint #debug-me, #feedback and changed to 20px */
+  background-color: var(--colour-background);
+  border: 2px solid var(--colour-secondary);
+  color: var(--font-dark);
+  margin-top: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*--------------------------------*/
+/*-------------BUTTONS------------*/
+/*--------------------------------*/
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: "Poppins";
+  border-style: none;
+  border-radius: 5px;
+  color: var(--font-light);
+  background-color: var(--colour-primary);
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--colour-secondary);
+}
+
+/*--------------------------------*/
+/*----------MEDIA QUERIES---------*/
+/*--------------------------------*/
+
+/* Media query for tablets up to 600px breakpoint */
+@media screen and (max-width: 600px) {
+  #score {
+    flex-direction: column; /* changes to a stack */
+  }
+  #bugs {
+    margin-right: 0;
+    margin-bottom: 5px; /* space between bugs and hearts */
+  }
+  #hearts {
+    margin-left: 0;
+  }
+  #question-container {
+    padding: 0;
+  }
+  #debug-me {
+    font-size: 1rem;
+    height: 100px;
+    padding: 20px;
+    height: auto; /* ensure the height adjusts based on content */
+  }
+  #feedback {
+    font-size: 1rem;
+    padding: 5px;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* media query for small screens up to 420px breakpoint */
+@media screen and (max-width: 420px) {
+  #question-container {
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  #feedback {
+    font-size: 0.8rem;
+    padding: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  #card {
+    padding: 0;
+  }
+}
+
+/*--------------------------------*/
+/*--------MEDIA QUERIES END-------*/
+/*--------------------------------*/

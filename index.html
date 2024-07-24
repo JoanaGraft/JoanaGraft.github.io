@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bug Fix App</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main>
+        <div id="main-container">
+            <div id="theme-switch">
+              <button class="btn" id="button-1" onclick="setTheme('theme-1')"></button>
+              <button class="btn" id="button-2" onclick="setTheme('theme-2')"></button>
+              <button class="btn" id="button-3" onclick="setTheme('theme-3')"></button>
+              <button class="btn" id="button-4" onclick="setTheme('theme-4')"></button>
+            </div>
+            <div id="card">
+              <div id="content">
+                <!-- START game -->
+                <div id="heading">
+                  <!--HEADING goes here-->
+                  <div id="score">
+                    <div id="bugs"></div>
+                    <div id="hearts"></div>
+                  </div>
+                  <!--BUG COUNTER and LIVES go here-->
+                </div>
+                <div id="home-txt">
+                  <!--home screen text (e.g. game rules) goes here-->
+                </div>
+                <div id="home-gif">
+                  <!--win and lose GIFs go here-->
+                </div>
+                <div id="home-btns" class="buttons">
+                  <!--home screen BUTTONS go here-->
+                </div>
+                <div id="question-container">
+                  <!--wraps around all question content-->
+                  <div id="code-window-q" class="question-type">
+                    <!--Question Type #1: CODING WINDOW Qs go here-->
+                  </div>
+                  <div id="fill-blanks-q" class="question-type">
+                    <!--Question Type #3: FILL-IN-THE-BLANK Qs go here-->
+                    <div id="code-line-fb">
+                      <span id="fb-open-code" class="code-font">
+                        <!--open wrap code (if any) goes here-->
+                      </span>
+                      <input type="text" id="fb-input" autocomplete="off">
+                      <!--input box goes here-->
+          
+                      <span id="fb-close-code" class="code-font">
+                        <!--close wrap code (if any) goes here-->
+                      </span>
+                    </div>
+                    <!-- above closes fill-blanks-q div -->
+                  </div>
+                  <div id="multiple-choice-q" class="question-type">
+                    <!--Question Type #2: MULTIPLE CHOICE Qs go here-->
+                    <div id="code-line-mc" class="code-font">
+                      <li class="li" id="choice-text1">
+                        <input type="radio" name="multiple-choice" id="choice-input1" class="mc-radio">
+                        <!--multiple choice Option #1-->
+                      </li>
+                      <li class="li" id="choice-text2">
+                        <input type="radio" name="multiple-choice" id="choice-input2" class="mc-radio">
+                        <!--multiple choice Option #2-->
+                      </li>
+                      <li class="li" id="choice-text3">
+                        <input type="radio" name="multiple-choice" id="choice-input3" class="mc-radio">
+                        <!--multiple choice Option #3-->
+                      </li>
+                    </div>
+                    <!-- above closes multiple choice div-->
+                  </div>
+                  <div id="question-buttons" class="buttons">
+                    <!--customised button divs go here-->
+                    <div id="submit-btn">
+                      <!--(1) submit button ALL QUESTION TYPES-->
+                    </div>
+                    <div id="reset-btn">
+                      <!--(2) code-window-q questions only!-->
+                    </div>
+                    <div id="next-btn">
+                      <!--(3) next button - ALL QUESTION TYPES-->
+                    </div>
+                  </div>
+                  <div id="feedback">
+                    <!--feedback text goes here-->
+                  </div>
+                  <!-- above closes question-container div -->
+                </div>
+                <!-- above closes content div -->
+              </div>
+              <!-- above closes card div -->
+            </div>
+            <!-- above closes container div -->
+          </div> 
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
